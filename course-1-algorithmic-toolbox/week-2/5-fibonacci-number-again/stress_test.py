@@ -5,7 +5,7 @@ from statistics import mean
 
 
 def main():
-    for i in range(10):
+    for i in range(1000):
         n = randint(1, (10**5)+1)
         m = randint(2, (10**3)+1)
 

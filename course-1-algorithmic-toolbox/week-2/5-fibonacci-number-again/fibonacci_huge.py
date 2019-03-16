@@ -1,4 +1,4 @@
-# Uses python3
+# python3
 import sys
 
 
@@ -15,18 +15,6 @@ def get_fibonacci_huge_naive(n, m):
     return current % m
 
 
-def get_fibonacci(n):
-    if n <= 1:
-        return n
-
-    t = 0, 1
-
-    for i in range(2, n):
-        t = t[1], sum(t)
-
-    return sum(t)
-
-
 def is_recurring(l: list) -> bool:
     if len(l) < 3 or len(l) % 2 != 0:
         return False
@@ -38,45 +26,18 @@ def is_recurring(l: list) -> bool:
 
 
 def get_fibonacci_huge_efficient(n: int, m: int) -> int:
-    i = 0
-    fib_mod = list()
+    sequence = [0, 1]
 
-    while not is_recurring(fib_mod):
-        fib_mod.append(get_fibonacci(i) % m)
-        i += 1
+    while len(sequence) < 3 or not sequence[-2:] == [0, 1]:
+        to_append = (sequence[-1] + sequence[-2]) % m
+        sequence.append(to_append)
 
-    periodic_mod = fib_mod[:len(fib_mod) // 2]
+    sequence = sequence[:-2]
 
-    return periodic_mod[n % len(periodic_mod)]
-
-
-# def get_fibonacci_last_digit_efficient(n):
-#     if n <= 1:
-#         return n
-#
-#     previous = 0
-#     current = 1
-#
-#     for _ in range(n - 1):
-#         previous, current = int(str(current)[-1]), int(str(previous)[-1]) + int(str(current)[-1])
-#
-#     return int(str(current)[-1])
-
-
-# def get_fibonacci_huge_efficient(n: int, m: int) -> int:
-#     i = 0
-#     fib_mod = list()
-#
-#     while not is_recurring(fib_mod):
-#         fib_mod.append(get_fibonacci_last_digit_efficient(i) % m)
-#         i += 1
-#
-#     periodic_mod = fib_mod[:len(fib_mod) // 2]
-#
-#     return periodic_mod[n % len(periodic_mod)]
+    return sequence[n % len(sequence)]
 
 
 if __name__ == '__main__':
-    input = sys.stdin.read();
+    input = sys.stdin.read()
     n, m = map(int, input.split())
-    print(get_fibonacci_huge_naive(n, m))
+    print(get_fibonacci_huge_efficient(n, m))
