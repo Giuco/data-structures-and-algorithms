@@ -2,7 +2,11 @@
 import sys
 
 
-def get_fibonacci_last_digit_efficient(n):
+def get_last_digit(x: int) -> int:
+    return int(str(x)[-1])
+
+
+def get_fibonacci_last_digit_efficient(n: int) -> int:
     if n <= 1:
         return n
 
@@ -10,9 +14,9 @@ def get_fibonacci_last_digit_efficient(n):
     current = 1
 
     for _ in range(n - 1):
-        previous, current = int(str(current)[-1]), int(str(previous)[-1]) + int(str(current)[-1])
+        previous, current = current, get_last_digit(previous + current)
 
-    return int(str(current)[-1])
+    return current
 
 
 def get_fibonacci_last_digit_naive(n):
