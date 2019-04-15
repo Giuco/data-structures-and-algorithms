@@ -3,8 +3,8 @@ from random import randint
 from time import time
 from statistics import mean
 
-NUMBER_OF_TEST = 1000
-N_MAX = 1000
+NUMBER_OF_TEST = 100
+N_MAX = 10000
 
 
 def main():
