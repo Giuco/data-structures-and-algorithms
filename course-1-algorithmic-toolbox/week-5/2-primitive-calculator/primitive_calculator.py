@@ -1,8 +1,9 @@
 # Uses python3
 import sys
 
+
 def optimal_sequence(n):
-    sequence = []
+    sequence = list()
     while n >= 1:
         sequence.append(n)
         if n % 3 == 0:
@@ -13,9 +14,11 @@ def optimal_sequence(n):
             n = n - 1
     return reversed(sequence)
 
-input = sys.stdin.read()
-n = int(input)
-sequence = list(optimal_sequence(n))
-print(len(sequence) - 1)
-for x in sequence:
-    print(x, end=' ')
+
+if __name__ == "__main":
+    input_data = sys.stdin.read()
+    n_input = int(input_data)
+    sequence_input = list(optimal_sequence(n_input))
+    print(len(sequence_input) - 1)
+    for x in sequence_input:
+        print(x, end=' ')
