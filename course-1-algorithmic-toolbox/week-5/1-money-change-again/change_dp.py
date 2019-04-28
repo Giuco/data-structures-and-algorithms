@@ -2,8 +2,17 @@
 import sys
 
 
+COIN_DENOMINATIONS = [4, 3, 1]
+
+
 def get_change(m):
-    # write your code here
+    """
+    >>> get_change(2)
+    2
+    >>> get_change(34)
+    9
+    """
+
     return m // 4
 
 
