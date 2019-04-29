@@ -1,9 +1,10 @@
 # Uses python3
 import sys
 from math import inf
+from typing import List
 
 
-def get_change(total_amount_of_money, coin_denominations):
+def get_change(total_amount_of_money: int, coin_denominations: List[int]) -> int:
     """
     >>> get_change(2, [4, 3, 1])
     2
