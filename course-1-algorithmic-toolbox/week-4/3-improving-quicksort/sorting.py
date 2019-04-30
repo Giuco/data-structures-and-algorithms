@@ -1,36 +1,45 @@
 # Uses python3
-import sys
 import random
-
-def partition3(a, l, r):
-    #write your code here
-    pass
-
-def partition2(a, l, r):
-    x = a[l]
-    j = l;
-    for i in range(l + 1, r + 1):
-        if a[i] <= x:
-            j += 1
-            a[i], a[j] = a[j], a[i]
-    a[l], a[j] = a[j], a[l]
-    return j
+import sys
+from typing import List
+from numbers import Number
+from random import randint
 
 
-def randomized_quick_sort(a, l, r):
-    if l >= r:
-        return
-    k = random.randint(l, r)
-    a[l], a[k] = a[k], a[l]
-    #use partition3
-    m = partition2(a, l, r)
-    randomized_quick_sort(a, l, m - 1);
-    randomized_quick_sort(a, m + 1, r);
+def get_random_pivot_point(size: int) -> int:
+    return randint(0, size-1)
+
+
+def get_pivot_point(elements: List[Number]) -> int:
+    return get_random_pivot_point(len(elements))
+
+
+def quick_sort(elements: List[Number]) -> List[Number]:
+    if len(elements) <= 1:
+        return elements
+
+    pivot_point = get_pivot_point(elements)
+    pivot = elements[pivot_point]
+
+    left, middle, right = [], [], []
+
+    for e in elements:
+        if e == pivot:
+            middle.append(e)
+        elif e > pivot:
+            right.append(e)
+        else:
+            left.append(e)
+
+    left = quick_sort(left)
+    right = quick_sort(right)
+
+    return left + middle + right
 
 
 if __name__ == '__main__':
     input = sys.stdin.read()
     n, *a = list(map(int, input.split()))
-    randomized_quick_sort(a, 0, n - 1)
+    a = quick_sort(a)
     for x in a:
         print(x, end=' ')
