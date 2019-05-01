@@ -2,16 +2,33 @@
 import sys
 
 
-def optimal_weight(W, w):
-    # write your code here
-    result = 0
-    for x in w:
-        if result + x <= W:
-            result = result + x
-    return result
+def optimal_weight(total_weight, bars):
+    """
+    >>> optimal_weight(10, [1, 4, 8])
+    9
+    """
+    bars = [0] + bars
+
+    table = [[0] * (total_weight + 1) for _ in range(len(bars))]
+
+    for i in range(len(bars)):
+        table[i][0] = 0
+
+    for w in range(total_weight + 1):
+        table[0][w] = 0
+
+    for i in range(1, len(bars)):
+        for w in range(1, total_weight + 1):
+            table[i][w] = table[i - 1][w]
+            if bars[i] <= w:
+                val = table[i - 1][w - bars[i]] + bars[i]
+                if table[i][w] < val:
+                    table[i][w] = val
+
+    return table[len(bars) - 1][total_weight]
 
 
 if __name__ == '__main__':
-    input = sys.stdin.read()
-    W, n, *w = list(map(int, input.split()))
+    input_data = sys.stdin.read()
+    W, n, *w = list(map(int, input_data.split()))
     print(optimal_weight(W, w))
