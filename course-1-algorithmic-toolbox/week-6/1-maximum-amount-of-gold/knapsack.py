@@ -11,12 +11,6 @@ def optimal_weight(total_weight, bars):
 
     table = [[0] * (total_weight + 1) for _ in range(len(bars))]
 
-    for i in range(len(bars)):
-        table[i][0] = 0
-
-    for w in range(total_weight + 1):
-        table[0][w] = 0
-
     for i in range(1, len(bars)):
         for w in range(1, total_weight + 1):
             table[i][w] = table[i - 1][w]
