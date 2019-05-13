@@ -22,7 +22,6 @@ def test_get_number_of_inversions_3():
 def test_get_number_of_inversion_4():
     input_list = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
     len_list = len(input_list)
-    answer = len_list*((len_list - 1)/2)
+    answer = len_list * ((len_list - 1) / 2)
 
     assert get_number_of_inversions(input_list) == answer
-

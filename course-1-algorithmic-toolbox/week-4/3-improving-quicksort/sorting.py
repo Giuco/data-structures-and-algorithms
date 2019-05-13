@@ -1,13 +1,13 @@
 # Uses python3
-import random
+
 import sys
-from typing import List
 from numbers import Number
 from random import randint
+from typing import List
 
 
 def get_random_pivot_point(size: int) -> int:
-    return randint(0, size-1)
+    return randint(0, size - 1)
 
 
 def get_pivot_point(elements: List[Number]) -> int:
@@ -38,8 +38,8 @@ def quick_sort(elements: List[Number]) -> List[Number]:
 
 
 if __name__ == '__main__':
-    input = sys.stdin.read()
-    n, *a = list(map(int, input.split()))
+    input_data = sys.stdin.read()
+    n, *a = list(map(int, input_data.split()))
     a = quick_sort(a)
     for x in a:
         print(x, end=' ')

@@ -4,7 +4,7 @@ import sys
 
 def is_prime(x: int) -> int:
     """Useless for current solution, but i'm not removing because it is cool"""
-    for divisor in range(2, x-1):
+    for divisor in range(2, x - 1):
         if x % divisor == 0:
             return False
 
@@ -41,7 +41,7 @@ def gcd_efficient(a: int, b: int) -> int:
         min_arg = remainder
 
 
-def gcd_naive(a, b):
+def gcd_naive(a: int, b: int) -> int:
     current_gcd = 1
     for d in range(2, min(a, b) + 1):
         if a % d == 0 and b % d == 0:
@@ -52,7 +52,6 @@ def gcd_naive(a, b):
 
 
 if __name__ == "__main__":
-    input = sys.stdin.read()
-    a, b = map(int, input.split())
-    # print(gcd_naive(a, b))
-    print(gcd_efficient(a, b))
+    input_data = sys.stdin.read()
+    a_input, b_input = map(int, input_data.split())
+    print(gcd_efficient(a_input, b_input))

@@ -1,18 +1,17 @@
 # Uses python3
 import sys
 from collections import namedtuple
-# from itertools import combinations
-# from tqdm import tqdm
+from itertools import combinations
+from typing import List
 
 Segment = namedtuple('Segment', 'start end')
 
 
-def is_point_inside_segment(segment, point):
-    # print("Testing")
+def is_point_inside_segment(segment: Segment, point: float) -> bool:
     return segment.start <= point <= segment.end
 
 
-def is_segment_covered(segment, list_of_points):
+def is_segment_covered(segment: Segment, list_of_points: List[float]) -> bool:
     covered = False
 
     for point in list_of_points:
@@ -23,7 +22,7 @@ def is_segment_covered(segment, list_of_points):
     return covered
 
 
-def is_combination_covering_all_segments(segments, list_of_points):
+def is_combination_covering_all_segments(segments: List[Segment], list_of_points: List[float]) -> bool:
     covered = True
 
     for segment in segments:
@@ -34,11 +33,11 @@ def is_combination_covering_all_segments(segments, list_of_points):
     return covered
 
 
-def optimal_points_naive(segments):
+def optimal_points_naive(segments: List[Segment]) -> List[float]:
     min_point = 1
     max_point = max([x.end for x in segments])
 
-    all_possible_points = range(min_point, max_point+1)
+    all_possible_points = range(min_point, max_point + 1)
 
     right_combination = None
 
@@ -56,7 +55,7 @@ def optimal_points_naive(segments):
     return right_combination
 
 
-def optimal_points_efficient(segments):
+def optimal_points_efficient(segments: List[Segment]) -> List[float]:
     segments = iter(sorted(segments, key=lambda x: x.end))
     segment = next(segments)
     maximum_point = segment.end
@@ -81,11 +80,6 @@ if __name__ == '__main__':
     input_data = sys.stdin.read()
     n, *data = map(int, input_data.split())
     input_segments = list(map(lambda x: Segment(x[0], x[1]), zip(data[::2], data[1::2])))
-
-    # input_data = [(1, 3), (2, 5), (3, 6)]
-    # input_data = [(4, 7), (1, 3), (2, 5), (5, 6)]
-    # input_segments = [Segment(start, end) for start, end in input_data]
-
     output_points = optimal_points_efficient(input_segments)
 
     print(len(output_points))

@@ -1,9 +1,10 @@
 # Uses python3
 import sys
-from typing import List, Union
+from numbers import Number
+from typing import List
 
 
-def no_more_options(start: Union[int, float, None], end: Union[int, float, None]) -> bool:
+def no_more_options(start: Number, end: Number) -> bool:
     start_is_numeric = any([isinstance(start, int), isinstance(start, float)])
     end_is_numeric = any([isinstance(end, int), isinstance(end, float)])
     start_equals_end = start == end
@@ -11,7 +12,7 @@ def no_more_options(start: Union[int, float, None], end: Union[int, float, None]
     return start_equals_end and end_is_numeric and start_is_numeric
 
 
-def binary_search(list_to_search: List[float], searched_value: float, start: int = None, end: int = None) -> int:
+def binary_search(list_to_search: List[Number], searched_value: Number, start: int = None, end: int = None) -> int:
     if no_more_options(start, end):
         return -1
 
@@ -34,7 +35,7 @@ def binary_search(list_to_search: List[float], searched_value: float, start: int
     return searched_value_index
 
 
-def linear_search(list_to_search: List[float], searched_value: float) -> int:
+def linear_search(list_to_search: List[Number], searched_value: Number) -> int:
     searched_value_index = -1
 
     for i, value in enumerate(list_to_search):
@@ -51,6 +52,6 @@ if __name__ == '__main__':
     n = data[0]
     m = data[n + 1]
     a = data[1: n + 1]
+
     for x in data[n + 2:]:
-        # replace with the call to binary_search when implemented
         print(binary_search(a, x), end=' ')

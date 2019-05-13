@@ -8,13 +8,13 @@ def fibonacci_sum_naive(n: int) -> int:
 
     previous = 0
     current = 1
-    sum = 1
+    total_sum = 1
 
     for _ in range(n - 1):
         previous, current = current, previous + current
-        sum += current
+        total_sum += current
 
-    return sum % 10
+    return total_sum % 10
 
 
 def fibonacci_sum_efficient(n: int) -> int:
@@ -25,7 +25,7 @@ def fibonacci_sum_efficient(n: int) -> int:
         sequence.append(to_append)
 
     sequence = sequence[:-2]
-    sequence = sequence[:(n % len(sequence)+1)]
+    sequence = sequence[:(n % len(sequence) + 1)]
 
     sum_sequence = sum(sequence)
     last_digit = sum_sequence % 10
@@ -36,8 +36,4 @@ def fibonacci_sum_efficient(n: int) -> int:
 if __name__ == '__main__':
     input_data = sys.stdin.read()
     n_input = int(input_data)
-
-    # n_input = 100
-
     print(fibonacci_sum_efficient(n_input))
-    # print(fibonacci_sum_naive(n_input))

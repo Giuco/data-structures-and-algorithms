@@ -1,7 +1,8 @@
-from fibonacci_sum_last_digit import fibonacci_sum_naive, fibonacci_sum_efficient
 from random import randint
-from time import time
 from statistics import mean
+from time import time
+
+from fibonacci_sum_last_digit import fibonacci_sum_efficient, fibonacci_sum_naive
 
 NUMBER_OF_TEST = 100
 N_MAX = 10000
@@ -14,8 +15,6 @@ def main():
         eff_time = list()
         nai_time = list()
 
-        print('{}'.format(n))
-
         st = time()
         eff_result = fibonacci_sum_efficient(n)
         eff_time.append(time() - st)
@@ -25,6 +24,7 @@ def main():
         nai_time.append(time() - st)
 
         if nai_result != eff_result:
+            print(n)
             print("Naive Result: {} \t\t Efficient Result: {}".format(nai_result, eff_result))
             break
 

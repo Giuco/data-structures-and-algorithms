@@ -25,7 +25,4 @@ def fibonacci_partial_sum_efficient(start: int, end: int) -> int:
 if __name__ == '__main__':
     input_data = sys.stdin.read()
     start_input, end_input = map(int, input_data.split())
-
-    # start_input, end_input = 1234, 12345
-
     print(fibonacci_partial_sum_efficient(start_input, end_input))

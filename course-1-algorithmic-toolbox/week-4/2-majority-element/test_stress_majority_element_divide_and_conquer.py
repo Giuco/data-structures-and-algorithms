@@ -1,5 +1,6 @@
-from majority_element import get_majority_element_divide_and_conquer, get_majority_element_naive
 from random import randint
+
+from majority_element import get_majority_element_divide_and_conquer, get_majority_element_naive
 
 NUMBER_OF_TEST = 10000
 LIST_SIZE = 10

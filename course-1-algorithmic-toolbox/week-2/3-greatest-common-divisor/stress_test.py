@@ -1,5 +1,6 @@
-from gcd import gcd_efficient, gcd_naive
 from random import randint
+
+from gcd import gcd_efficient, gcd_naive
 
 
 def main():
@@ -7,12 +8,11 @@ def main():
         a = randint(0, 1000000)
         b = randint(1, 1000000)
 
-        print('{} / {}'.format(a, b))
-
         eff_result = gcd_efficient(a, b)
         nai_result = gcd_naive(a, b)
 
         if eff_result != nai_result:
+            print('{} / {}'.format(a, b))
             print("Naive Result: {} \t\t Efficient Result: {}".format(nai_result, eff_result))
             break
 

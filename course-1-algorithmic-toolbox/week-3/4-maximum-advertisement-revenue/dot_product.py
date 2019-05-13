@@ -1,25 +1,22 @@
-#Uses python3
+# Uses python3
 
 import sys
+from typing import List
 
 
-def max_dot_product(a, b):
+def max_dot_product(a: List[int], b: List[int]) -> int:
     a = sorted(a, reverse=True)
     b = sorted(b, reverse=True)
 
-    total_revenue = sum([c*d for c, d in zip(a, b)])
+    total_revenue = sum([c * d for c, d in zip(a, b)])
 
     return total_revenue
 
 
 if __name__ == '__main__':
-    input = sys.stdin.read()
-    data = list(map(int, input.split()))
-    n = data[0]
-    a = data[1:(n + 1)]
-    b = data[(n + 1):]
-
-    # a, b = [1, 3, -5], [-2, 4, 1]
-
-    print(max_dot_product(a, b))
-
+    input_data = sys.stdin.read()
+    data = list(map(int, input_data.split()))
+    n_input = data[0]
+    a_input = data[1:(n_input + 1)]
+    b_input = data[(n_input + 1):]
+    print(max_dot_product(a_input, b_input))

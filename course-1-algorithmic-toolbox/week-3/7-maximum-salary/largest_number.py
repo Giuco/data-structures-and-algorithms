@@ -1,16 +1,17 @@
-#Uses python3
+# Uses python3
 
 import sys
+from typing import List
 
 
-def digits_bigger_or_equal(a, b):
+def digits_bigger_or_equal(a: int, b: int) -> bool:
     a_first = int(str(a) + str(b))
     b_first = int(str(b) + str(a))
 
     return a_first >= b_first
 
 
-def largest_number_usual(list_of_digits):
+def largest_number_usual(list_of_digits: List[int]) -> str:
     result = ""
 
     while list_of_digits:
@@ -33,11 +34,3 @@ if __name__ == '__main__':
     data = input_data.split()
     lq = data[1:]
     print(largest_number_usual(lq))
-
-    # lq = [21, 2]
-    # print(largest_number_usual(lq))
-    # lq = [9, 4, 6, 1, 9]
-    # print(largest_number_usual(lq))
-    # lq = [23, 39, 92]
-    # print(largest_number_usual(lq))
-

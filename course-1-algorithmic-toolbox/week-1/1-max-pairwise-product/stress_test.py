@@ -1,5 +1,6 @@
-from max_pairwise_product import max_pairwise_product_original, max_pairwise_product
 from random import randint
+
+from max_pairwise_product import max_pairwise_product, max_pairwise_product_original
 
 
 def stress_test():
@@ -11,12 +12,10 @@ def stress_test():
         original_result = max_pairwise_product_original(input_numbers)
         my_result = max_pairwise_product(input_numbers)
 
-        input_numbers = [str(x) for x in input_numbers]
-
-        print("Input numbers: {}".format(' '.join(input_numbers)))
-        print("My Result: {} \t Original Result: {}".format(my_result, original_result))
-
         if original_result != my_result:
+            input_numbers = [str(x) for x in input_numbers]
+            print("Input numbers: {}".format(' '.join(input_numbers)))
+            print("My Result: {} \t Original Result: {}".format(my_result, original_result))
             break
 
 

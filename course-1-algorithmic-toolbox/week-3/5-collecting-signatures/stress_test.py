@@ -1,7 +1,8 @@
-from covering_segments import optimal_points_naive, optimal_points_efficient, Segment
 from random import randint
-from time import time
 from statistics import mean
+from time import time
+
+from covering_segments import Segment, optimal_points_efficient, optimal_points_naive
 
 NUMBER_TESTS = 100
 MAX_NUMBER_SEGMENTS = 30
@@ -20,8 +21,6 @@ def main():
             input_segments.append(Segment(start, end))
 
         eff_time, nai_time = list(), list()
-
-        print("-")
 
         st = time()
         eff_result = optimal_points_efficient(input_segments)

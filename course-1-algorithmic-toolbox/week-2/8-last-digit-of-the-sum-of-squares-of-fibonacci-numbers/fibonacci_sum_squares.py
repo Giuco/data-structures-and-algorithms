@@ -10,9 +10,9 @@ def fibonacci_sum_efficient(n: int) -> int:
         sequence.append(to_append)
 
     sequence = sequence[:-2]
-    sequence = sequence[:(n % len(sequence)+1)]
+    sequence = sequence[:(n % len(sequence) + 1)]
 
-    sum_sequence = sum(map(lambda x: x**2, sequence))
+    sum_sequence = sum(map(lambda x: x ** 2, sequence))
     last_digit = sum_sequence % 10
 
     return last_digit
@@ -20,7 +20,4 @@ def fibonacci_sum_efficient(n: int) -> int:
 
 if __name__ == '__main__':
     n_input = int(stdin.read())
-
-    # n_input = 7
-
     print(fibonacci_sum_efficient(n_input))
