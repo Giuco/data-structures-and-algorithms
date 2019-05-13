@@ -50,7 +50,6 @@ def lcm_efficient_2(a: int, b: int) -> int:
 
 
 if __name__ == '__main__':
-    input_ = sys.stdin.read()
-    a, b = map(int, input_.split())
-    # a, b = 226553150, 1023473145
-    print(lcm_efficient_2(a, b))
+    input_data = sys.stdin.read()
+    a_input, b_input = map(int, input_data.split())
+    print(lcm_efficient_2(a_input, b_input))

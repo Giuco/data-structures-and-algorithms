@@ -1,8 +1,9 @@
 # python3
 import sys
+from typing import List
 
 
-def compute_min_refills(distance, tank, stops):
+def compute_min_refills(distance: int, tank: int, stops: List[int]):
     stops = sorted(stops)
     stops.append(distance)
 
@@ -21,7 +22,7 @@ def compute_min_refills(distance, tank, stops):
 
 
 if __name__ == '__main__':
-    d, m, _, *stops = map(int, sys.stdin.read().split())
+    d_input, m_input, _, *stops_input = map(int, sys.stdin.read().split())
     # d, m, stops = 500, 200, [100, 200, 300, 400]
-    print(compute_min_refills(d, m, stops))
+    print(compute_min_refills(d_input, m_input, stops_input))
 

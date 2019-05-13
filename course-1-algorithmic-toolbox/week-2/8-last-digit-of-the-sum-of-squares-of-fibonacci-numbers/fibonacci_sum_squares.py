@@ -20,7 +20,4 @@ def fibonacci_sum_efficient(n: int) -> int:
 
 if __name__ == '__main__':
     n_input = int(stdin.read())
-
-    # n_input = 7
-
     print(fibonacci_sum_efficient(n_input))

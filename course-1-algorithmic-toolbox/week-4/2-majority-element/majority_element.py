@@ -1,6 +1,6 @@
 # Uses python3
 import sys
-from typing import List, Tuple, Union
+from typing import List, Tuple
 
 
 def get_majority_element_naive(a: List[int]) -> int:
@@ -20,7 +20,7 @@ def get_majority_element_naive(a: List[int]) -> int:
     return output
 
 
-def _get_majority_element_divide_and_conquer(elements: List[int]) -> Union[int, None]:
+def _get_majority_element_divide_and_conquer(elements: List[int]) -> int:
 
     if len(elements) == 1:
         return elements[0]
@@ -57,5 +57,4 @@ def get_majority_element_divide_and_conquer(a: List[int]) -> int:
 if __name__ == '__main__':
     input_data = sys.stdin.read()
     _, *a_input = list(map(int, input_data.split()))
-    # a_input = [0, 2, 4, 5, 3, 1, 1, 3, 5, 2]
     print(get_majority_element_divide_and_conquer(a_input))

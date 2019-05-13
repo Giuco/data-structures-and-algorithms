@@ -25,4 +25,3 @@ def test_get_number_of_inversion_4():
     answer = len_list*((len_list - 1)/2)
 
     assert get_number_of_inversions(input_list) == answer
-

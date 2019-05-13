@@ -1,5 +1,5 @@
 # Uses python3
-import random
+
 import sys
 from typing import List
 from numbers import Number
@@ -38,8 +38,8 @@ def quick_sort(elements: List[Number]) -> List[Number]:
 
 
 if __name__ == '__main__':
-    input = sys.stdin.read()
-    n, *a = list(map(int, input.split()))
+    input_data = sys.stdin.read()
+    n, *a = list(map(int, input_data.split()))
     a = quick_sort(a)
     for x in a:
         print(x, end=' ')

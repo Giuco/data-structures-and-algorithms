@@ -5,15 +5,16 @@ from bisect import bisect_left, bisect_right
 from itertools import combinations
 from math import hypot
 from operator import itemgetter
+from typing import Tuple, List
 
 _Y_COORD = itemgetter(1)
 
 
-def distance(p, q):
+def distance(p: Tuple[float, float], q: Tuple[float, float]) -> float:
     return hypot(p[0] - q[0], p[1] - q[1])
 
 
-def closest_distance(p_points):
+def closest_distance(p_points: List[Tuple[float, float]]) -> float:
     """
     >>> closest_distance([(0, 0), (3, 4)])
     5.0

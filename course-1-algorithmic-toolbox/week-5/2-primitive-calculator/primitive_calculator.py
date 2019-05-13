@@ -1,9 +1,9 @@
 # Uses python3
 import sys
-from typing import List, Dict
+from typing import List
 
 
-def optimal_sequence_naive(n):
+def optimal_sequence_naive(n: int) -> List[int]:
     sequence = list()
     while n >= 1:
         sequence.append(n)
@@ -13,7 +13,7 @@ def optimal_sequence_naive(n):
             n = n // 2
         else:
             n = n - 1
-    return reversed(sequence)
+    return list(reversed(sequence))
 
 
 def optimal_sequence(big_number: int) -> List[int]:
@@ -31,8 +31,7 @@ def optimal_sequence(big_number: int) -> List[int]:
     table.append(0)
 
     for sub_number in range(1, big_number+1):
-        table.append\
-            (float("inf"))
+        table.append(float("inf"))
         if sub_number % 3 == 0:
             table[sub_number] = 1 + table[sub_number//3]
 

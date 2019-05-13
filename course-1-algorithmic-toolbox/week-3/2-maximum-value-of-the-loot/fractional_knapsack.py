@@ -1,7 +1,10 @@
 # Uses python3
 import sys
+from numbers import Number
+from typing import List
 
-def get_optimal_value(capacity, weights, values):
+
+def get_optimal_value(capacity: int, weights: List[int], values: List[int]) -> Number:
     total_value = 0.0
 
     weights_and_values = iter(sorted([(weight, value) for weight, value in zip(weights, values)], key=lambda x: x[1]/x[0], reverse=True))
@@ -23,13 +26,9 @@ def get_optimal_value(capacity, weights, values):
 
 
 if __name__ == "__main__":
-    data = list(map(int, sys.stdin.read().split()))
-    n, capacity = data[0:2]
-    values = data[2:(2 * n + 2):2]
-    weights = data[3:(2 * n + 2):2]
-    # capacity = 50
-    # values = [60, 100, 120]
-    # weights = [20, 50, 30]
-
-    opt_value = get_optimal_value(capacity, weights, values)
+    data_input = list(map(int, sys.stdin.read().split()))
+    n_input, capacity_input = data_input[0:2]
+    values_input = data_input[2:(2 * n_input + 2):2]
+    weights_input = data_input[3:(2 * n_input + 2):2]
+    opt_value = get_optimal_value(capacity_input, weights_input, values_input)
     print("{:.10f}".format(opt_value))

@@ -7,9 +7,6 @@ def get_last_digit(x: int) -> int:
 
 
 def get_fibonacci_last_digit_efficient(n: int) -> int:
-    if n <= 1:
-        return n
-
     previous = 0
     current = 1
 
@@ -19,10 +16,7 @@ def get_fibonacci_last_digit_efficient(n: int) -> int:
     return current
 
 
-def get_fibonacci_last_digit_naive(n):
-    if n <= 1:
-        return n
-
+def get_fibonacci_last_digit_naive(n: int) -> int:
     previous = 0
     current = 1
 
@@ -34,5 +28,5 @@ def get_fibonacci_last_digit_naive(n):
 
 if __name__ == '__main__':
     input_ = sys.stdin.read()
-    n = int(input_)
-    print(get_fibonacci_last_digit_efficient(n))
+    n_input = int(input_)
+    print(get_fibonacci_last_digit_efficient(n_input))

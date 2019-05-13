@@ -2,7 +2,7 @@
 import sys
 
 
-def get_change(change):
+def get_change(change: int) -> int:
     coin_sizes = iter((10, 5, 1))
     coin_size = next(coin_sizes)
     n_coins = 0
@@ -19,5 +19,4 @@ def get_change(change):
 
 if __name__ == '__main__':
     m = int(sys.stdin.read())
-    # m = 28
     print(get_change(m))

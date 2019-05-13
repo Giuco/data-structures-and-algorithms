@@ -21,8 +21,6 @@ def main():
 
         eff_time, nai_time = list(), list()
 
-        print("-")
-
         st = time()
         eff_result = optimal_points_efficient(input_segments)
         eff_time.append(time() - st)

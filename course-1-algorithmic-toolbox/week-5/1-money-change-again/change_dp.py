@@ -24,7 +24,7 @@ def get_change(total_amount_of_money: int, coin_denominations: List[int]) -> int
             elif coin < money_subset:
                 n_coins[money_subset] = min(n_coins[money_subset - coin] + 1, n_coins[money_subset])
 
-    return n_coins[total_amount_of_money]
+    return int(n_coins[total_amount_of_money])
 
 
 if __name__ == '__main__':

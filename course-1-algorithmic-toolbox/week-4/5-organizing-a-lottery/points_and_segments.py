@@ -1,8 +1,9 @@
 # Uses python3
 import sys
+from typing import List
 
 
-def count_segments_efficient(starts, ends, points_list):
+def count_segments_efficient(starts: List[int], ends: List[int], points_list: List[int]):
     """
     >>> count_segments_efficient([2, 0], [3, 5], [1, 6, 11])
     [1, 0, 0]
@@ -37,7 +38,7 @@ def count_segments_efficient(starts, ends, points_list):
     return result
 
 
-def count_segments_naive(starts, ends, points):
+def count_segments_naive(starts: List[int], ends: List[int], points: List[int]):
     """
     >>> count_segments_naive([2, 0], [3, 5], [1, 6, 11])
     [1, 0, 0]

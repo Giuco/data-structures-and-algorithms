@@ -2,7 +2,7 @@
 import sys
 
 
-def get_fibonacci_huge_naive(n, m):
+def get_fibonacci_huge_naive(n: int, m: int) -> int:
     if n <= 1:
         return n
 
@@ -38,6 +38,6 @@ def get_fibonacci_huge_efficient(n: int, m: int) -> int:
 
 
 if __name__ == '__main__':
-    input = sys.stdin.read()
-    n, m = map(int, input.split())
-    print(get_fibonacci_huge_efficient(n, m))
+    input_data = sys.stdin.read()
+    n_data, m_input = map(int, input_data.split())
+    print(get_fibonacci_huge_efficient(n_data, m_input))

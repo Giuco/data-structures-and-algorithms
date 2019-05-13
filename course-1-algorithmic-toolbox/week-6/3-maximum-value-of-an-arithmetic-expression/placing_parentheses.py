@@ -1,6 +1,6 @@
 # Uses python3
 from copy import deepcopy
-from typing import List, Union
+from typing import List, Union, Tuple
 
 
 def eval_operation(a: int, b: int, op: str) -> int:
@@ -49,7 +49,8 @@ def get_maximum_value_naive(data: str) -> int:
     return max(get_all_possible_values(copied_data))
 
 
-def get_min_max(j, p, operations, table_min, table_max):
+def get_min_max(j: int, p: int, operations: List[str],
+                table_min: List[List[int]], table_max: List[List[int]]) -> Tuple[int, int]:
     min_number = float("inf")
     max_number = float("-inf")
 

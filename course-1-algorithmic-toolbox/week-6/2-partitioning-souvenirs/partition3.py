@@ -3,7 +3,7 @@ import sys
 from itertools import product
 
 
-def partition3(A):
+def partition3(a):
     """
     >>> partition3([3, 3, 3, 3])
     0
@@ -17,10 +17,10 @@ def partition3(A):
     >>> partition3([1, 2, 3, 4, 5, 5, 7, 7, 8, 10, 12, 19, 25])
     1
     """
-    for c in product(range(3), repeat=len(A)):
+    for c in product(range(3), repeat=len(a)):
         sums = [None] * 3
         for i in range(3):
-            sums[i] = sum(A[k] for k in range(len(A)) if c[k] == i)
+            sums[i] = sum(a[k] for k in range(len(a)) if c[k] == i)
 
         if sums[0] == sums[1] == sums[2]:
             return 1
@@ -29,6 +29,6 @@ def partition3(A):
 
 
 if __name__ == '__main__':
-    input = sys.stdin.read()
-    n, *A = list(map(int, input.split()))
-    print(partition3(A))
+    input_data = sys.stdin.read()
+    n, *a_input = list(map(int, input_data.split()))
+    print(partition3(a_input))

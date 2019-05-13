@@ -1,8 +1,9 @@
 # Uses python3
 import sys
+from typing import List
 
 
-def optimal_weight(total_weight, bars):
+def optimal_weight(total_weight: int, bars: List[int]) -> int:
     """
     >>> optimal_weight(10, [1, 4, 8])
     9

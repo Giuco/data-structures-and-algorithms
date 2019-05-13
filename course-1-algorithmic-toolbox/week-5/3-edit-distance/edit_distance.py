@@ -44,27 +44,27 @@ def edit_distance(str_a: str, str_b: str) -> int:
     len_a = len(str_a) + 1
     len_b = len(str_b) + 1
 
-    T = [
+    table = [
         [int()] * len_b
         for _ in range(len_a)
     ]
 
     for i in range(len_a):
-        T[i][0] = i
+        table[i][0] = i
     for j in range(len_b):
-        T[0][j] = j
+        table[0][j] = j
 
     for i in range(1, len_a):
         for j in range(1, len_b):
-            insert_cost = T[i-1][j] + 1
-            match_cost = T[i-1][j-1] + (str_a[i-1] != str_b[j-1])
-            delete_cost = T[i][j-1] + 1
+            insert_cost = table[i-1][j] + 1
+            match_cost = table[i-1][j-1] + (str_a[i-1] != str_b[j-1])
+            delete_cost = table[i][j-1] + 1
 
             node_cost = min(insert_cost, match_cost, delete_cost)
 
-            T[i][j] = node_cost
+            table[i][j] = node_cost
 
-    return T[len(str_a)][len(str_b)]
+    return table[len(str_a)][len(str_b)]
 
 
 if __name__ == "__main__":
