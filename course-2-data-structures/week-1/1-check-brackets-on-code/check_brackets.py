@@ -33,24 +33,29 @@ def find_mismatch(text):
     10
     """
     opening_brackets_stack = []
+    mismatch = None
 
-    for i, element in enumerate(text):
+    for i, element in enumerate(text, 1):
         if element in "([{":
             opening_brackets_stack.append(Bracket(element, i))
         elif element in ")]}":
             if len(opening_brackets_stack) == 0:
-                return i + 1
-            elif any([element == ")" and opening_brackets_stack[-1][0] == "(",
-                      element == "]" and opening_brackets_stack[-1][0] == "[",
-                      element == "}" and opening_brackets_stack[-1][0] == "{"]):
+                mismatch = Bracket(element, i)
+                break
+            elif are_matching(opening_brackets_stack[-1].char, element):
                 opening_brackets_stack.pop(-1)
             else:
-                return i + 1
+                mismatch = Bracket(element, i)
+                break
 
-    if opening_brackets_stack:
-        return opening_brackets_stack[-1][1] + 1
+    if mismatch:
+        result = mismatch.position
+    elif opening_brackets_stack:
+        result = opening_brackets_stack[-1].position
+    else:
+        result = "Success"
 
-    return "Success"
+    return result
 
 
 def main():
