@@ -21,7 +21,6 @@ def get_majority_element_naive(a: List[int]) -> int:
 
 
 def _get_majority_element_divide_and_conquer(elements: List[int]) -> int:
-
     if len(elements) == 1:
         return elements[0]
 

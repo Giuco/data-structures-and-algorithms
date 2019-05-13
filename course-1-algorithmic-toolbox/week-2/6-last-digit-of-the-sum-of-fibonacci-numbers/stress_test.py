@@ -1,7 +1,8 @@
-from fibonacci_sum_last_digit import fibonacci_sum_naive, fibonacci_sum_efficient
 from random import randint
-from time import time
 from statistics import mean
+from time import time
+
+from fibonacci_sum_last_digit import fibonacci_sum_efficient, fibonacci_sum_naive
 
 NUMBER_OF_TEST = 100
 N_MAX = 10000

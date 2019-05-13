@@ -11,15 +11,14 @@ def lcm_naive(a, b) -> int:
 
 
 def lcm_efficient_1(a: int, b: int) -> int:
-
     a_mult = 1
     b_mult = 1
 
     while True:
 
-        if a_mult*a == b_mult*b:
-            return a_mult*a
-        elif a_mult*a > b_mult*b:
+        if a_mult * a == b_mult * b:
+            return a_mult * a
+        elif a_mult * a > b_mult * b:
             b_mult += 1
         else:
             a_mult += 1
@@ -46,7 +45,7 @@ def gcd(a: int, b: int) -> int:
 
 
 def lcm_efficient_2(a: int, b: int) -> int:
-    return int((a*b) // gcd(a, b))
+    return int((a * b) // gcd(a, b))
 
 
 if __name__ == '__main__':

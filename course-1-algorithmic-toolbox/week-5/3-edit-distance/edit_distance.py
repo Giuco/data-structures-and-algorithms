@@ -21,8 +21,8 @@ def edit_distance_recursive(str_a: str, str_b: str) -> int:
         return len(str_a)
 
     result = min(
-        edit_distance_recursive(str_a[:-1], str_b)+1,
-        edit_distance_recursive(str_a, str_b[:-1])+1,
+        edit_distance_recursive(str_a[:-1], str_b) + 1,
+        edit_distance_recursive(str_a, str_b[:-1]) + 1,
         edit_distance_recursive(str_a[:-1], str_b[:-1]) + (str_a[-1] != str_b[-1]),
     )
 
@@ -56,9 +56,9 @@ def edit_distance(str_a: str, str_b: str) -> int:
 
     for i in range(1, len_a):
         for j in range(1, len_b):
-            insert_cost = table[i-1][j] + 1
-            match_cost = table[i-1][j-1] + (str_a[i-1] != str_b[j-1])
-            delete_cost = table[i][j-1] + 1
+            insert_cost = table[i - 1][j] + 1
+            match_cost = table[i - 1][j - 1] + (str_a[i - 1] != str_b[j - 1])
+            delete_cost = table[i][j - 1] + 1
 
             node_cost = min(insert_cost, match_cost, delete_cost)
 

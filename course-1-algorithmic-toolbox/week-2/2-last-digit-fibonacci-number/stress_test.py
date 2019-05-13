@@ -1,5 +1,6 @@
-from fibonacci_last_digit import get_fibonacci_last_digit_efficient, get_fibonacci_last_digit_naive
 from random import randint
+
+from fibonacci_last_digit import get_fibonacci_last_digit_efficient, get_fibonacci_last_digit_naive
 
 
 def main():

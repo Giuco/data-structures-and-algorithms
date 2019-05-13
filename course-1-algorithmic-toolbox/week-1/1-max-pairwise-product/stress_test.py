@@ -1,5 +1,6 @@
-from max_pairwise_product import max_pairwise_product_original, max_pairwise_product
 from random import randint
+
+from max_pairwise_product import max_pairwise_product, max_pairwise_product_original
 
 
 def stress_test():

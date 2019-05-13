@@ -15,4 +15,3 @@ def test_binary_search_2():
 
     for p in p_to_find:
         assert binary_search(lq, p) == linear_search(lq, p)
-

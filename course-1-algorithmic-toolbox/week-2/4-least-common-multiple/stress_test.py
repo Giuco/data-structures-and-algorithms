@@ -1,7 +1,8 @@
-from lcm import lcm_naive, lcm_efficient_1, lcm_efficient_2
 from random import randint
-from time import time
 from statistics import mean
+from time import time
+
+from lcm import lcm_efficient_1, lcm_efficient_2
 
 
 def main():

@@ -4,7 +4,7 @@ import sys
 
 def is_prime(x: int) -> int:
     """Useless for current solution, but i'm not removing because it is cool"""
-    for divisor in range(2, x-1):
+    for divisor in range(2, x - 1):
         if x % divisor == 0:
             return False
 

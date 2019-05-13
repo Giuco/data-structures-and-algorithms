@@ -1,6 +1,6 @@
 # Uses python3
 from copy import deepcopy
-from typing import List, Union, Tuple
+from typing import List, Tuple, Union
 
 
 def eval_operation(a: int, b: int, op: str) -> int:
@@ -92,7 +92,7 @@ def get_maximum_value(data: str) -> int:
             p = i + j
             table_min[j][p], table_max[j][p] = get_min_max(j, p, operations, table_min, table_max)
 
-    return table_max[0][n_numbers-1]
+    return table_max[0][n_numbers - 1]
 
 
 if __name__ == "__main__":

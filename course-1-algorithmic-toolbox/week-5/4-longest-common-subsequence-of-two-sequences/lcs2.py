@@ -34,7 +34,7 @@ def reconstruct_lis(arr: List[Number], t: List[int]) -> List[Number]:
     for idx, m in enumerate(reversed(t)):
         if m == n_lis:
             n_lis -= 1
-            reconstructed_lis.append(arr[-(idx+1)])
+            reconstructed_lis.append(arr[-(idx + 1)])
 
     return list(reversed(reconstructed_lis))
 

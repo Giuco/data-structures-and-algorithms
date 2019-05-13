@@ -7,7 +7,8 @@ from typing import List
 def get_optimal_value(capacity: int, weights: List[int], values: List[int]) -> Number:
     total_value = 0.0
 
-    weights_and_values = iter(sorted([(weight, value) for weight, value in zip(weights, values)], key=lambda x: x[1]/x[0], reverse=True))
+    weights_and_values = iter(
+        sorted([(weight, value) for weight, value in zip(weights, values)], key=lambda x: x[1] / x[0], reverse=True))
     w_v = next(weights_and_values)
 
     while capacity > 0:
@@ -19,7 +20,7 @@ def get_optimal_value(capacity: int, weights: List[int], values: List[int]) -> N
             except StopIteration:
                 break
         else:
-            total_value += (capacity/w_v[0]) * w_v[1]
+            total_value += (capacity / w_v[0]) * w_v[1]
             capacity = 0
 
     return total_value

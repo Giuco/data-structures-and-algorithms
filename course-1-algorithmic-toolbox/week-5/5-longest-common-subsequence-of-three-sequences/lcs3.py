@@ -58,18 +58,18 @@ def lcs3(a: List[Number], b: List[Number], c: List[Number]) -> int:
     """
     table = dict()
 
-    for int_a in range(len(a)+1):
-        for int_b in range(len(b)+1):
-            for int_c in range(len(c)+1):
+    for int_a in range(len(a) + 1):
+        for int_b in range(len(b) + 1):
+            for int_c in range(len(c) + 1):
                 if int_a == 0 or int_b == 0 or int_c == 0:
                     table[int_a, int_b, int_c] = 0
-                elif a[int_a-1] == b[int_b-1] == c[int_c-1]:
-                    table[int_a, int_b, int_c] = 1 + table[int_a-1, int_b-1, int_c-1]
+                elif a[int_a - 1] == b[int_b - 1] == c[int_c - 1]:
+                    table[int_a, int_b, int_c] = 1 + table[int_a - 1, int_b - 1, int_c - 1]
                 else:
                     table[int_a, int_b, int_c] = max(
-                        table[int_a-1, int_b, int_c],
-                        table[int_a, int_b-1, int_c],
-                        table[int_a, int_b, int_c-1]
+                        table[int_a - 1, int_b, int_c],
+                        table[int_a, int_b - 1, int_c],
+                        table[int_a, int_b, int_c - 1]
                     )
 
     return table[len(a), len(b), len(c)]

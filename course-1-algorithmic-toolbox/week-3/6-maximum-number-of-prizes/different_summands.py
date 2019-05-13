@@ -6,7 +6,7 @@ from typing import List
 def optimal_summands_naive(n: int) -> List[int]:
     partition = []
     step = 1
-    while n > 2*step:
+    while n > 2 * step:
         partition.append(step)
         n = n - step
         step += 1

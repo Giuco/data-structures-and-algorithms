@@ -8,7 +8,7 @@ def max_dot_product(a: List[int], b: List[int]) -> int:
     a = sorted(a, reverse=True)
     b = sorted(b, reverse=True)
 
-    total_revenue = sum([c*d for c, d in zip(a, b)])
+    total_revenue = sum([c * d for c, d in zip(a, b)])
 
     return total_revenue
 

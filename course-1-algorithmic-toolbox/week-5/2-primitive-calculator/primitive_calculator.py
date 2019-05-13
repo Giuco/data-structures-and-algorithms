@@ -30,16 +30,16 @@ def optimal_sequence(big_number: int) -> List[int]:
     table = list()
     table.append(0)
 
-    for sub_number in range(1, big_number+1):
+    for sub_number in range(1, big_number + 1):
         table.append(float("inf"))
         if sub_number % 3 == 0:
-            table[sub_number] = 1 + table[sub_number//3]
+            table[sub_number] = 1 + table[sub_number // 3]
 
-        if sub_number % 2 == 0 and table[sub_number//2]+1 < table[sub_number]:
-            table[sub_number] = 1 + table[sub_number//2]
+        if sub_number % 2 == 0 and table[sub_number // 2] + 1 < table[sub_number]:
+            table[sub_number] = 1 + table[sub_number // 2]
 
-        if table[sub_number-1]+1 < table[sub_number]:
-            table[sub_number] = table[sub_number-1]+1
+        if table[sub_number - 1] + 1 < table[sub_number]:
+            table[sub_number] = table[sub_number - 1] + 1
 
     return reconstruct_optimal_sequence(table, big_number)
 
@@ -49,11 +49,11 @@ def reconstruct_optimal_sequence(table: List[int], n) -> List[int]:
 
     while n > 1:
         seq_table.append(n)
-        if n % 3 == 0 and table[n//3] == table[n] - 1:
-            n = n//3
-        elif n % 2 == 0 and table[n//2] == table[n] - 1:
-            n = n//2
-        elif table[n-1] == (table[n] - 1):
+        if n % 3 == 0 and table[n // 3] == table[n] - 1:
+            n = n // 3
+        elif n % 2 == 0 and table[n // 2] == table[n] - 1:
+            n = n // 2
+        elif table[n - 1] == (table[n] - 1):
             n -= 1
 
     seq_table.append(1)

@@ -25,7 +25,7 @@ def fibonacci_sum_efficient(n: int) -> int:
         sequence.append(to_append)
 
     sequence = sequence[:-2]
-    sequence = sequence[:(n % len(sequence)+1)]
+    sequence = sequence[:(n % len(sequence) + 1)]
 
     sum_sequence = sum(sequence)
     last_digit = sum_sequence % 10

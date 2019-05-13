@@ -1,5 +1,6 @@
-from gcd import gcd_efficient, gcd_naive
 from random import randint
+
+from gcd import gcd_efficient, gcd_naive
 
 
 def main():

@@ -1,11 +1,10 @@
 # Uses python3
 import sys
-
 from bisect import bisect_left, bisect_right
 from itertools import combinations
 from math import hypot
 from operator import itemgetter
-from typing import Tuple, List
+from typing import List, Tuple
 
 _Y_COORD = itemgetter(1)
 

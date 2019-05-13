@@ -37,7 +37,7 @@ def optimal_points_naive(segments: List[Segment]) -> List[float]:
     min_point = 1
     max_point = max([x.end for x in segments])
 
-    all_possible_points = range(min_point, max_point+1)
+    all_possible_points = range(min_point, max_point + 1)
 
     right_combination = None
 

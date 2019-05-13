@@ -1,13 +1,14 @@
-from fibonacci_huge import get_fibonacci_huge_naive, get_fibonacci_huge_efficient
 from random import randint
-from time import time
 from statistics import mean
+from time import time
+
+from fibonacci_huge import get_fibonacci_huge_efficient, get_fibonacci_huge_naive
 
 
 def main():
     for i in range(1000):
-        n = randint(1, (10**5)+1)
-        m = randint(2, (10**3)+1)
+        n = randint(1, (10 ** 5) + 1)
+        m = randint(2, (10 ** 3) + 1)
 
         eff_time = list()
         nai_time = list()

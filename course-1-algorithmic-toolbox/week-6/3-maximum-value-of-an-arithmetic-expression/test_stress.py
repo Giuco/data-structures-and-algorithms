@@ -2,7 +2,7 @@ from random import randint
 from statistics import mean
 from time import time
 
-from placing_parentheses import get_maximum_value_naive, get_maximum_value
+from placing_parentheses import get_maximum_value, get_maximum_value_naive
 
 MAX_LEN = 100
 MAX_NUMBER = 9
